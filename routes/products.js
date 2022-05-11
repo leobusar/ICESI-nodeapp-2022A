@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
-const ProductController  = require("../controllers/products");
-const validate = require("../middleware/validate");
-const schemas = require("../models/schemas");
+var express = require('express');
+var router = express.Router();
+const ProductController  = require("../controllers/products")
+const schemas = require("../models/schemas")
+const validate = require("../middleware/validate")
+const auth = require("../middleware/auth")
 
 /* GET users listing. */
-router.post('/', validate(schemas.product), ProductController.create);
-
+router.post('/', auth, validate(schemas.product), ProductController.create);
 router.get('/', ProductController.index);
 router.get('/:id', ProductController.show);
 router.put('/:id', ProductController.update);

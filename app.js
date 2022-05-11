@@ -11,8 +11,11 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 
 var app = express();
+const dotenv = require("dotenv")
 
-mongodb = "mongodb+srv://temporal:wIr38OLANcG3sCCz@cluster0.rntqq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+dotenv.config()
+
+mongodb = process.env.MONGO_URI
 //mongodb = "mongodb://localhost:27017/mydb";
 mongoose.connect(mongodb)
 
