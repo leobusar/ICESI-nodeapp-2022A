@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-const Joi = require('joi')
-
-const schemas =  {
-    product: Joi.object().keys({
-        name: Joi.string().alphanum().min(3).max(100).required(),
-        price: Joi.number().min(1).max(100000).required()
-    })
-=======
 const  Joi = require("joi")
 
 const schemas = {
@@ -21,7 +12,6 @@ const schemas = {
     name: Joi.string().alphanum().min(3).max(10).required(),
     price: Joi.number().min(1).max(10000)
   })
->>>>>>> e4f5ac4e1e32d6945d5870fd39a81a0337a7285b
 }
 
 module.exports = schemas
